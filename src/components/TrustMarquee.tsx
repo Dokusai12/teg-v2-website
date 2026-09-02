@@ -72,7 +72,7 @@ export function TrustMarquee() {
   }, [mobile, reduceMotion]);
 
   return (
-    <section className="trust-marquee-section overflow-hidden border-b border-border/70 bg-surface-1/60 py-6">
+    <section className="trust-marquee-section overflow-hidden border-b border-border/70 bg-secondary/40 py-6">
       <p className="mb-5 text-center font-mono text-[10px] uppercase tracking-[0.32em] text-muted-foreground/70">
         Powering protection across every sector
       </p>
