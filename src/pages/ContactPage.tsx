@@ -9,7 +9,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { submitContactForm } from '@/lib/submitContactForm';
 
 const field =
-  'w-full rounded-xl border border-border bg-background px-4 text-base text-foreground transition-all duration-2 ease-brand placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 md:text-[14px]';
+  'w-full rounded-xl border border-ink-border bg-ink px-4 text-base text-ink-foreground transition-all duration-2 ease-brand placeholder:text-ink-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 md:text-[14px]';
 
 const expectations = [
   {
