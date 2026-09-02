@@ -16,7 +16,7 @@ const stats = [
   },
   {
     value: '10–15%',
-    label: 'Typical uplift in basket value once the suite is live. [placeholder — confirm range]',
+    label: 'Typical uplift in basket value once the suite is live.',
   },
   {
     value: '99.9%',
