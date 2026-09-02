@@ -1,7 +1,7 @@
 import { Section, SectionHeading } from '@/components/system/Section';
 import { BentoCell } from '@/components/system/BentoCell';
 import {
-  CheckoutShield,
+  CheckoutCard,
   BaggageClaimFlow,
   FlightStatusStrip,
   BundleStack,
