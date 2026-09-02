@@ -453,3 +453,19 @@
     display: none !important;
   }
 }
+
+/* Platform diagram: signal travelling from the platform into the protection layer */
+@keyframes diagram-pulse {
+  0% { top: -3px; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: calc(100% - 3px); opacity: 0; }
+}
+
+.diagram-pulse {
+  animation: diagram-pulse 2.4s var(--ease-brand) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram-pulse { animation: none; opacity: 0.6; top: 50%; }
+}
