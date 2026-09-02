@@ -10,6 +10,14 @@ const metrics = [
   { label: 'Avg. value', value: '£41.20', change: '+4.7%' },
 ];
 
+const sideNav = [
+  { label: 'Overview', icon: LayoutGrid },
+  { label: 'Transactions', icon: ArrowLeftRight },
+  { label: 'Products', icon: Package },
+  { label: 'Analytics', icon: BarChart3 },
+  { label: 'Settings', icon: Settings },
+];
+
 const chart = [35, 42, 38, 55, 48, 62, 45, 70, 65, 78, 55, 82, 70, 88, 75, 92, 68, 85, 90, 78, 95, 88, 82, 96, 85, 92, 98, 90, 95, 100];
 
 export function Hero() {
