@@ -38,7 +38,9 @@ export function Navbar() {
   const { pathname } = useLocation();
 
   /* Pages with a dark hero need a solid light bar so the dark wordmark stays legible. */
-  const solid = /^\/(products|industries)\//.test(pathname);
+  const solid =
+    /^\/(products|industries)\//.test(pathname) ||
+    /^\/(about|contact|careers|privacy-policy|terms|cookies|anti-bribery|modern-slavery)\b/.test(pathname);
 
   useEffect(() => {
     const fn = () => setS(window.scrollY > 20);
