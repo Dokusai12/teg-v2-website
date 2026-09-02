@@ -82,7 +82,7 @@ export function PlatformDiagramMockup() {
         <div className="mt-5 flex items-center justify-between border-t border-border/60 pt-4">
           <p className="text-[11.5px] text-muted-foreground">Revenue enabled across the network</p>
           <p className="t-num text-[12.5px] font-semibold text-foreground">
-            +£54 <span className="font-normal text-muted-foreground">per 4 bookings</span>
+            +£54 <span className="ml-1 font-normal text-muted-foreground">per 4 bookings</span>
           </p>
         </div>
       </div>
