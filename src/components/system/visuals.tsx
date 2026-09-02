@@ -130,7 +130,7 @@ export function CheckoutCard() {
 
           {/* floating revenue pill */}
           <div
-            className="absolute -right-2 top-[118px] rounded-2xl border border-border bg-card px-4 py-2.5 text-center shadow-elev-2 transition-transform duration-3 ease-spring group-hover:-translate-y-1"
+            className="absolute -right-2 top-[96px] rounded-2xl border border-border bg-card px-4 py-2.5 text-center shadow-elev-2 transition-transform duration-3 ease-spring group-hover:-translate-y-1"
             aria-hidden
           >
             <p className="t-num text-[16px] font-bold leading-none text-signal">+£24</p>
