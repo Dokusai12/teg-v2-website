@@ -215,7 +215,7 @@ export function Hero() {
                               }}
                             >
                               {peak && (
-                                <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-ink-foreground">
+                                <span className="absolute -top-6 right-0 whitespace-nowrap rounded-md bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-ink-foreground">
                                   £64k
                                 </span>
                               )}
