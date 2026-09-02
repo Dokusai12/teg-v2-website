@@ -24,6 +24,8 @@ interface BentoCellProps {
   visual?: ReactNode;
   cta?: string;
   revealClass?: string;
+  /** 'stack' (default) puts the visual under the copy; 'split' puts copy left, visual right. */
+  layout?: 'stack' | 'split';
 }
 
 export function BentoCell({
