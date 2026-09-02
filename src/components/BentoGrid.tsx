@@ -1,7 +1,7 @@
 import { Section, SectionHeading } from '@/components/system/Section';
 import { BentoCell } from '@/components/system/BentoCell';
 import {
-  AttachRateMeter,
+  CheckoutShield,
   BaggageClaimFlow,
   FlightStatusStrip,
   BundleStack,
@@ -26,7 +26,7 @@ export function BentoGrid() {
           description="Let customers upgrade to a refundable booking at checkout. They get certainty if plans change; you keep a high-margin share of every sale — with zero risk on your balance sheet."
           cta="Explore Refund Shield"
           className="lg:col-span-2 dl1"
-          visual={<AttachRateMeter ink />}
+          visual={<CheckoutShield />}
         />
 
         {/* Tall tinted cell */}
