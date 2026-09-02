@@ -1,75 +1,93 @@
-import { Globe, Plane, Building2, Map } from 'lucide-react';
+import { Globe, Plane, Building2, Map, ShieldCheck, Code2 } from 'lucide-react';
 
-/** Platforms page: Polished hub-and-spoke diagram with shield layer */
+const partners = [
+  { name: 'OTA partner', Icon: Globe, value: '+£12' },
+  { name: 'Airline', Icon: Plane, value: '+£18' },
+  { name: 'Hotel chain', Icon: Building2, value: '+£9' },
+  { name: 'Tour operator', Icon: Map, value: '+£15' },
+];
+
+/** Platforms page: one integration fanning protection out across a merchant network. */
 export function PlatformDiagramMockup() {
-  const partners = [
-    { name: 'OTA Partner', Icon: Globe },
-    { name: 'Airline', Icon: Plane },
-    { name: 'Hotel Chain', Icon: Building2 },
-    { name: 'Tour Operator', Icon: Map },
-  ];
-
   return (
-    <div className="relative mx-auto max-w-[460px]">
-      <div className="absolute inset-0 bg-accent/[0.04] rounded-3xl blur-2xl" />
+    <div className="relative mx-auto w-full max-w-[480px]">
+      <div className="absolute -inset-6 rounded-[36px] bg-accent/15 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
 
-      <div className="relative bg-card/50 backdrop-blur-sm border border-border/60 rounded-3xl p-6 pb-8 shadow-xl">
-        {/* Platform hub */}
-        <div className="flex justify-center mb-1">
-          <div className="relative">
-            <div className="absolute -inset-3 bg-accent/[0.08] rounded-3xl blur-lg" />
-            <div className="relative w-32 h-24 rounded-2xl bg-gradient-to-br from-foreground/[0.06] to-foreground/[0.02] border border-foreground/15 shadow-lg flex flex-col items-center justify-center gap-1.5">
-              <div className="w-8 h-8 rounded-lg bg-foreground/[0.08] border border-foreground/10 flex items-center justify-center">
-                <svg className="w-4 h-4 text-foreground/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-                </svg>
-              </div>
-              <span className="text-[11px] font-bold text-foreground tracking-wide">Your Platform</span>
+      <div className="surface-1 relative overflow-hidden rounded-[26px] p-6 pb-5 sm:p-7">
+        {/* Hub */}
+        <div className="flex items-center justify-between gap-3 rounded-2xl border border-border/70 bg-secondary/40 px-4 py-3.5">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background">
+              <Code2 className="h-4 w-4" strokeWidth={2} />
+            </span>
+            <div>
+              <p className="text-[13.5px] font-semibold leading-none text-foreground">Your platform</p>
+              <p className="mt-1.5 text-[11.5px] leading-none text-muted-foreground">One API integration</p>
             </div>
+          </div>
+          <span className="t-num rounded-full border border-border/70 bg-card px-2.5 py-1 text-[10.5px] font-medium text-muted-foreground">
+            POST /v1/quote
+          </span>
+        </div>
+
+        {/* Trunk */}
+        <div className="relative mx-auto h-7 w-px bg-gradient-to-b from-border to-accent/40">
+          <span className="diagram-pulse absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-accent" />
+        </div>
+
+        {/* Shield layer */}
+        <div className="relative flex items-center gap-3 rounded-2xl border border-accent/25 bg-accent/[0.07] px-4 py-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+            <ShieldCheck className="h-4 w-4" strokeWidth={2} />
+          </span>
+          <div className="min-w-0">
+            <p className="text-[13px] font-semibold leading-none text-foreground">Tego protection layer</p>
+            <p className="mt-1.5 text-[11.5px] leading-none text-muted-foreground">
+              White-labelled · underwritten · serviced
+            </p>
           </div>
         </div>
 
-        {/* SVG connection lines */}
-        <svg className="w-full h-[120px] overflow-visible" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet">
-          <line x1="200" y1="0" x2="200" y2="35" className="stroke-border" strokeWidth="1.5" strokeDasharray="4 3" />
-          <rect x="30" y="35" width="340" height="32" rx="8" className="fill-accent/[0.08] stroke-accent/20" strokeWidth="1" />
-          <text x="200" y="55" textAnchor="middle" className="fill-accent text-[9px] font-bold uppercase" letterSpacing="3">
-            Refund Shield Layer
-          </text>
-          {[68, 168, 232, 332].map((x, i) => (
-            <g key={i}>
-              <line x1="200" y1="67" x2={x} y2="100" className="stroke-border/60" strokeWidth="1" strokeDasharray="3 2" />
-              <circle cx={x} cy="100" r="3" className="fill-accent/30 stroke-accent/50" strokeWidth="1" />
-            </g>
+        {/* Fan-out */}
+        <svg className="h-8 w-full" viewBox="0 0 400 32" preserveAspectRatio="none" aria-hidden>
+          {[50, 150, 250, 350].map((x) => (
+            <path
+              key={x}
+              d={`M200 0 C200 18, ${x} 12, ${x} 32`}
+              className="stroke-border"
+              strokeWidth="1"
+              fill="none"
+              strokeDasharray="3 3"
+            />
           ))}
         </svg>
 
-        {/* Partner cards */}
-        <div className="grid grid-cols-4 gap-2 -mt-2">
-          {partners.map(({ name, Icon }) => (
+        {/* Merchants */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+          {partners.map(({ name, Icon, value }) => (
             <div
               key={name}
-              className="bg-card border border-border/80 rounded-xl p-3 shadow-sm flex flex-col items-center gap-2"
+              className="rounded-xl border border-border/70 bg-card p-3 text-center transition-transform duration-300 ease-brand hover:-translate-y-0.5"
             >
-              <div className="w-8 h-8 rounded-lg bg-foreground/[0.04] border border-foreground/[0.08] flex items-center justify-center">
-                <Icon className="w-4 h-4 text-muted-foreground" strokeWidth={1.5} />
-              </div>
-              <span className="text-[9px] font-semibold text-muted-foreground text-center leading-tight">{name}</span>
+              <span className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-secondary/70">
+                <Icon className="h-4 w-4 text-muted-foreground" strokeWidth={1.6} />
+              </span>
+              <p className="text-[11px] font-medium leading-tight text-foreground">{name}</p>
+              <p className="t-num mt-1.5 text-[11px] font-semibold text-accent">{value}</p>
             </div>
           ))}
         </div>
 
-        {/* Revenue indicator */}
-        <div className="mt-5 flex items-center justify-center gap-2">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
-          <span className="text-[10px] font-semibold text-accent bg-accent/[0.06] border border-accent/15 rounded-full px-3 py-1">
-            Revenue enabled across entire network
-          </span>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+        {/* Footer strip */}
+        <div className="mt-5 flex items-center justify-between border-t border-border/60 pt-4">
+          <p className="text-[11.5px] text-muted-foreground">Revenue enabled across the network</p>
+          <p className="t-num text-[12.5px] font-semibold text-foreground">
+            +£54 <span className="font-normal text-muted-foreground">per 4 bookings</span>
+          </p>
         </div>
       </div>
 
-      <p className="text-center text-[13px] text-muted-foreground mt-5">
+      <p className="mt-5 text-center text-[13px] text-ink-muted">
         One integration → monetise flexibility at scale
       </p>
     </div>
