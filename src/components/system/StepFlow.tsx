@@ -56,7 +56,14 @@ export function StepFlow({ steps, tone = 'default', className }: StepFlowProps) 
   }, [steps.length]);
 
   return (
-    <ol ref={ref} className={cn('relative grid gap-5 md:grid-cols-3', className)}>
+    <ol
+      ref={ref}
+      className={cn(
+        'relative grid gap-5',
+        steps.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3',
+        className,
+      )}
+    >
       {steps.map((step, i) => {
         const on = i <= active;
         return (
