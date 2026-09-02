@@ -213,13 +213,7 @@ export function Hero() {
                                   : `hsl(var(--accent) / ${(0.12 + (h / 100) * 0.5).toFixed(2)})`,
                                 boxShadow: peak ? '0 -4px 14px hsl(var(--accent) / 0.25)' : undefined,
                               }}
-                            >
-                              {peak && (
-                                <span className="absolute -top-6 right-0 whitespace-nowrap rounded-md bg-ink px-1.5 py-0.5 text-[9px] font-semibold text-ink-foreground">
-                                  £64k
-                                </span>
-                              )}
-                            </div>
+                            />
                           );
                         })}
                       </div>
@@ -231,23 +225,6 @@ export function Hero() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 shadow-[0_2px_4px_hsl(var(--ink)/0.03)]">
-                    <span className="text-[11px] font-bold text-foreground">Live products</span>
-                    <div className="flex items-center gap-2">
-                      {[
-                        { label: 'Refund Shield', tone: 'bg-signal/15 text-signal' },
-                        { label: 'Air Shield', tone: 'bg-accent/10 text-accent' },
-                        { label: 'Baggage Shield', tone: 'bg-secondary text-muted-foreground' },
-                      ].map((p) => (
-                        <span
-                          key={p.label}
-                          className={`rounded-full px-2.5 py-1 text-[10px] font-semibold ${p.tone}`}
-                        >
-                          {p.label}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
