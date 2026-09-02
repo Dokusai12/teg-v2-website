@@ -33,7 +33,7 @@ export function HowItWorks() {
         description="No new systems to run, no risk to underwrite, no claims desk to staff. You expose the offer; we handle everything behind it."
         actions={
           <CtaLink to="/contact" variant="primary">
-            Talk to an engineer
+            Talk to sales
           </CtaLink>
         }
       />
