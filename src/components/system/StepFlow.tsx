@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 export interface FlowStep {
   title: string;
   description: string;
-  detail?: string;
 }
 
 interface StepFlowProps {
@@ -70,7 +69,7 @@ export function StepFlow({ steps, tone = 'default', className }: StepFlowProps) 
           <li
             key={step.title}
             className={cn(
-              'relative flex flex-col gap-3 rounded-2xl border p-6 md:p-7',
+              'relative flex flex-col items-center gap-3 rounded-2xl border p-6 text-center md:p-7',
               'transition-[border-color,background-color,transform,opacity] duration-3 ease-brand',
               ink
                 ? on
@@ -82,7 +81,7 @@ export function StepFlow({ steps, tone = 'default', className }: StepFlowProps) 
               on ? 'opacity-100' : 'opacity-70',
             )}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <span
                 className={cn(
                   'flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[13px] font-semibold tabular-nums',
@@ -101,16 +100,6 @@ export function StepFlow({ steps, tone = 'default', className }: StepFlowProps) 
               </h3>
             </div>
             <p className={cn('t-small', ink && 'text-ink-muted')}>{step.description}</p>
-            {step.detail && (
-              <p
-                className={cn(
-                  'mt-auto rounded-lg px-3 py-2 font-mono text-[11.5px] leading-relaxed',
-                  ink ? 'bg-ink/70 text-ink-muted' : 'bg-secondary/80 text-muted-foreground',
-                )}
-              >
-                {step.detail}
-              </p>
-            )}
             {/* progress rail on desktop */}
             <span
               className={cn(
