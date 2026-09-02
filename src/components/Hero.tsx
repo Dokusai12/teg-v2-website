@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowLeftRight, BarChart3, ChevronRight, LayoutGrid, Package, Settings } from 'lucide-react';
 import { CtaLink } from '@/components/system/CtaLink';
-import { CtaLink } from '@/components/system/CtaLink';
 
 const metrics = [
   { label: 'Revenue', value: '£1,514,762', change: '+19.1%' },
