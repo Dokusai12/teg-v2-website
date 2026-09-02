@@ -1,71 +1,78 @@
 # Tego Group — V2
 
-Same brand, same product story. V2 makes the site read like an established fintech-grade infrastructure company rather than a well-designed startup page: an evolved design system, far deeper content on every page, and a real conversion path from first scroll to booked call. Everything stays static — no backend, no CMS.
+No new sections of the site, no blog, no news. Same pages, same navigation, same products. V2 is about the existing site looking and reading like a mature company: a stronger design system, a much better bento/product presentation, smoother motion, and pages that are properly full instead of thin.
 
-## 1. Evolved design system
+## What's weak today (from the live site)
 
-Not a rebrand. The blue accent, the wordmark and the clean light surface stay. What changes:
+- The homepage is a hero, a bento, some stats, sectors, CTA — it ends quickly. There's no middle: no problem framing, no "how it works", no proof, no objection handling.
+- The bento is four cards of unequal quality: one big dark card carries the design, the other three are near-identical bordered boxes with small mockups.
+- Product pages are short. A visitor who clicks "Refund Shield" gets a fraction of what they need to take it seriously.
+- Visually it's competent but generic-SaaS: one blue accent, purple/blue blobs, uniform white sections, one card style, everything the same weight.
+- Motion is fixed-delay fades that all look alike.
 
-- **Typography scale.** A proper display/body split with tighter tracking on large headings, a defined scale (display / h1 / h2 / h3 / lead / body / caption) applied consistently instead of ad-hoc `text-[17px]` values. Numerals aligned for stats and pricing.
-- **Palette depth.** The single flat accent becomes a small system: primary blue, a deeper "ink" navy for authority surfaces, a muted signal green for positive metrics, and warmer neutrals so white sections stop feeling clinical. Dark "ink" bands break the page rhythm between light sections.
-- **Surfaces.** Consistent card system (three elevations), one radius scale, subtler borders, and a hairline grid/noise texture on dark bands. Retire the three-blob purple mesh in favour of a restrained, brand-blue ambient field.
-- **Iconography and data visuals.** One consistent stroke weight; charts, meters and checkout mockups all drawn from a shared visual kit instead of each section inventing its own.
+## 1. Design system, evolved
 
-## 2. Motion pass
+- **Typography.** A real scale (display / h1 / h2 / h3 / lead / body / caption) with tighter tracking on large headings, replacing the ad-hoc `text-[17px]` values scattered through components. Tabular numerals for stats, metrics and prices so dashboards and figures line up.
+- **Colour.** Keep the blue. Add a deep "ink" navy for authority bands, a muted signal green for positive metrics (currently hardcoded HSL), and slightly warmer neutrals so white sections stop feeling clinical. Retire the purple/magenta blobs — the ambient field becomes brand-blue and much more restrained.
+- **Surfaces.** Three defined card elevations instead of one bordered box; a single radius scale; hairline borders; a subtle grid/noise texture on dark bands. Alternating light and ink sections give the page rhythm instead of one long white scroll.
+- **Detail.** Consistent icon stroke weight, one shared kit for charts/meters/checkout mockups, refined focus and hover states everywhere.
 
-- Replace the current fixed-delay entrance with a single scroll-choreography system: staggered reveals with a shared easing curve, parallel not sequential, so nothing feels like it's waiting.
-- Sticky/scroll-driven moments on key sections — the "how it works" flow advancing as you scroll, counters that count once, a checkout mockup that assembles itself.
-- Micro-interactions: nav dropdown, card hover lift, button press, tab switches, all on one timing token set.
-- Full `prefers-reduced-motion` support and mobile-cheap variants preserved.
+## 2. Bento, rebuilt
 
-## 3. Deeper content
+The product grid is the centrepiece and gets the most attention:
 
-**Homepage** — reordered into a real narrative: hero → trusted-by → the problem (ancillary revenue left on the table) → product suite → how integration works (3 steps, technical but readable) → proof/metrics → industries → objection-handling FAQ → CTA.
+- Deliberate asymmetry — a hero cell, a tall cell, two wide cells — instead of one big card plus three lookalikes.
+- Every cell gets a real visual: an animated attach-rate meter, a baggage claim flow, a live flight-status strip, a bundle price stack. Each drawn from the shared visual kit so they read as one family.
+- Cells respond on hover: the visual advances a step, the card lifts, the CTA arrow resolves.
+- Mixed treatments — ink cells, tinted cells, glass cells — so scanning the grid feels designed, not templated.
+- A second, lighter bento on the homepage for capabilities/why-Tego, reusing the same primitives.
 
-**Product pages** (Refund Shield, Baggage Shield, Air Shield, Bundles) — each grows into a full page: what it is, who it's for, how the customer experiences it, how you earn, integration snippet, coverage/eligibility detail, claims journey, FAQ, related products, CTA.
+## 3. Motion pass
 
-**New pages**
-- **How it works / Integration** — the technical story: integration models (hosted, API, redirect), a sample flow, go-live timeline, support model. This is the page that makes buyers trust you.
-- **Why Tego** — differentiators, economics, service standards, what happens after signature.
-- **Security, compliance & governance** — hub that also gathers the existing anti-bribery, modern slavery and privacy pages under one credible roof.
-- **Industries index** — a real landing page above the six existing industry pages.
-- **FAQ** — consolidated, searchable by section.
+- One scroll-choreography system replacing the current fixed-delay reveals: shared easing, staggered in parallel, nothing feels like it's waiting its turn.
+- Scroll-driven moments where they earn it — the integration steps advancing as you scroll, counters counting once, the checkout mockup assembling itself.
+- Micro-interactions on one timing token set: nav dropdown, card lift, button press, tab switch.
+- `prefers-reduced-motion` respected and the existing mobile performance guards kept.
 
-**Existing pages levelled up** — About gains a company timeline, leadership and values; Careers gains culture, benefits and process; Contact becomes a proper conversion page.
+## 4. Fuller pages (same pages, more substance)
 
-## 4. Conversion machinery
+**Homepage** — the middle of the page gets built out: hero → trusted-by → the problem (ancillary revenue left on the table, framed with real numbers) → rebuilt product bento → how integration works, 3 steps → proof/metrics band on ink → industries → objection-handling FAQ → CTA.
 
-- **Revenue estimator** — visitor enters bookings/month and average order value, gets an estimated annual ancillary revenue range with assumptions shown. Client-side only, no data stored. The single strongest addition for a B2B site like this.
-- **Contact page rebuilt** — segmented intent (partnership / support / press), qualifying fields, what-happens-next timeline, response-time promise. Same static submission behaviour as today.
-- **CTA discipline** — one primary CTA per page plus a persistent, unobtrusive secondary path; sticky CTA bar on long product pages; contextual CTAs at the end of each major section instead of only at the bottom.
-- **Trust surfaces** — placeholder-marked slots for logos, testimonials and case-study results, wired and styled so real assets drop straight in.
+**Product pages** (Refund Shield, Baggage Shield, Air Shield, Bundles) — each becomes a full page with a consistent template: what it is, who it's for, the customer's experience end to end, how you earn, integration snippet, coverage and eligibility, the claims journey, FAQ, related products, CTA.
+
+**Industry pages** (six existing) — same treatment via a shared template: sector-specific pain, which products fit, an example journey, relevant metrics, FAQ, CTA. Today they're mostly a hero plus a couple of blocks.
+
+**About** — company timeline, leadership, values, what it's like to work with Tego, credibility markers.
+
+**Contact** — becomes a proper conversion page: segmented intent, qualifying fields, what-happens-next timeline, response-time promise. Same static submission behaviour as today.
+
+**Careers and legal pages** — brought onto the new typography and layout system so they stop looking like an afterthought.
 
 ## 5. Copy
 
-I draft all new copy in a consistent, confident B2B voice. Every place that needs a fact I can't verify (client names, real percentages, quotes, certifications) gets an obvious placeholder rather than an invented claim, so nothing goes live unchecked.
+I draft all the new copy in a confident, specific B2B voice. Anywhere a fact is needed that I can't verify — client names, real percentages, quotes, certifications — it goes in as an obvious placeholder rather than an invented claim.
 
-## 6. SEO and technical
+## 6. SEO and quality
 
-- Unique title/description/OG per page, single H1, semantic sections, JSON-LD (Organization, Product, FAQ), breadcrumbs.
-- Image and animation budget kept in check; the existing mobile performance work is preserved and extended to the new sections.
-- Accessibility pass: focus states, contrast, keyboard nav on the new interactive pieces.
+- Unique title/description/OG per page, single H1 per page, semantic sections, Organization + Product JSON-LD.
+- Accessibility pass on the new interactive pieces: focus states, contrast, keyboard nav.
+- Performance kept in budget; existing mobile optimisations preserved and extended to the new sections.
 
 ## Technical notes
 
-- React + Vite + Tailwind + shadcn, React Router — unchanged. No new routing model, no backend.
-- Design tokens centralised in `src/index.css` (extended HSL token set: `--ink`, `--signal`, elevation and motion tokens). Components consume tokens only — no hardcoded colours.
-- Motion tokens (`--ease-brand`, duration steps) drive both CSS reveals and any component animation; the existing `.r/.rl/.rs` reveal utilities are refactored into one observer-driven system.
-- New shared components: `Section`, `SectionHeading`, `StatBlock`, `FaqAccordion`, `StepFlow`, `PricingEstimator`, `TrustSlot`, `StickyCta`.
-- New routes: `/how-it-works`, `/why-tego`, `/security`, `/industries`, `/faq`. Existing routes and redirects preserved.
-- Content lives in typed data modules under `src/data/` (mirroring the existing careers pattern) so copy edits never touch layout code.
+- Stack unchanged: React + Vite + Tailwind + shadcn + React Router. No backend, no CMS, no new routes.
+- Tokens extended in `src/index.css` (`--ink`, `--signal`, elevation and motion tokens). Components consume tokens only — the hardcoded `hsl(145 60% 40%)`-style values get replaced.
+- The `.r / .rl / .rr / .rs` reveal utilities are consolidated into one observer-driven system with shared easing tokens.
+- New shared primitives (reused across pages, not new pages): `Section`, `SectionHeading`, `BentoCell`, `StatBlock`, `StepFlow`, `FaqAccordion`, `ProductPageTemplate`, `IndustryPageTemplate`.
+- Page copy moves into typed data modules under `src/data/` (mirroring the existing careers pattern) so text edits never touch layout.
 
-## Suggested build order
+## Build order
 
-1. Design tokens, typography scale, motion system, shared components.
-2. Homepage rebuild on the new system.
-3. Product pages depth pass.
-4. New pages (How it works, Why Tego, Security, Industries index, FAQ).
-5. Conversion layer (estimator, contact rebuild, CTA discipline).
-6. About/Careers/legal refresh, SEO, accessibility, performance QA.
+1. Tokens, typography scale, motion system, shared primitives.
+2. Homepage: rebuilt bento + the new middle sections.
+3. Product pages on the new template.
+4. Industry pages on the new template.
+5. About, Contact, Careers, legal.
+6. SEO, accessibility, performance QA.
 
-Each step is reviewable on its own, so you can steer after seeing the homepage rather than at the end.
+You can review after step 2 and steer the whole direction before the rest follows.
