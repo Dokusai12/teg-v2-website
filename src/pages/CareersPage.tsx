@@ -109,7 +109,7 @@ export default function CareersPage() {
           <SectionHeading
             eyebrow="Open positions"
             title="Roles we're hiring for"
-            description="Don't see the right fit? Send us a note anyway — we hire ahead of the roadmap when we meet the right person."
+            description="Don't see the right fit? Send us a note anyway. We hire ahead of the roadmap when we meet the right person."
           />
           <ul className="mt-12 flex flex-col gap-4">
             {CAREER_JOBS.map((job, i) => (

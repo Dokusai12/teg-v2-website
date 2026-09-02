@@ -20,7 +20,7 @@ const pillars = [
   {
     icon: Wallet,
     title: 'Margin you keep',
-    body: 'A transparent revenue share on every sale, reconciled and settled automatically — visible in your dashboard in real time.',
+    body: 'A transparent revenue share on every sale, reconciled and settled automatically, visible in your dashboard in real time.',
   },
 ];
 

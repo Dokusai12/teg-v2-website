@@ -74,22 +74,18 @@ const howWeWork = [
   {
     title: 'Understand the flow',
     description: 'We map your booking journey, basket values and customer mix before proposing anything.',
-    detail: 'Typically a single working session with your product and commercial leads.',
   },
   {
     title: 'Design the offer',
     description: 'Placement, wording, pricing and revenue share are designed around your economics.',
-    detail: 'You approve the exact customer-facing experience before launch.',
   },
   {
     title: 'Integrate and launch',
     description: 'A REST integration your engineers can ship in days, with a sandbox and reference UI.',
-    detail: 'Launch behind a flag, on a share of traffic, at your pace.',
   },
   {
     title: 'Operate and optimise',
     description: 'We handle claims and support, then tune placement and copy against live attach data.',
-    detail: 'Reviewed with you on a regular commercial cadence.',
   },
 ];
 

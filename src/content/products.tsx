@@ -31,7 +31,7 @@ export interface ProductContent {
   visual: ReactNode;
   heroStats: { value: string; label: string }[];
   pillars: { icon: LucideIcon; title: string; body: string }[];
-  steps: { title: string; description: string; detail?: string }[];
+  steps: { title: string; description: string }[];
   covered: string[];
   notCovered: string[];
   coverageNote: string;
@@ -92,7 +92,7 @@ const sharedCommercials = (share: string) => [
   {
     label: 'Your risk',
     value: 'None',
-    detail: 'Underwritten and serviced through regulated partners — nothing on your balance sheet.',
+    detail: 'Underwritten and serviced through regulated partners, with nothing on your balance sheet.',
   },
   {
     label: 'Your effort',
@@ -146,7 +146,6 @@ export const products: Record<string, ProductContent> = {
       {
         title: 'Offer at checkout',
         description: 'The refundable upgrade appears in your payment step, priced for that specific booking.',
-        detail: 'Hosted component or your own UI — placement and wording are testable from day one.',
       },
       {
         title: 'Customer opts in',
@@ -155,7 +154,6 @@ export const products: Record<string, ProductContent> = {
       {
         title: 'Plans change',
         description: 'The customer submits a request through the branded portal with supporting evidence.',
-        detail: 'No forms for your team, no tickets in your inbox.',
       },
       {
         title: 'Refund is settled',
@@ -175,7 +173,7 @@ export const products: Record<string, ProductContent> = {
       'Requests submitted outside the published window',
     ],
     coverageNote:
-      'Covered reasons and evidence requirements vary by market and are set out in the customer terms. [placeholder — confirm final wording with compliance]',
+      'Covered reasons and evidence requirements vary by market and are set out in the customer terms.',
     integration: sharedIntegration,
     code: codeBlock('refund_shield'),
     commercials: sharedCommercials('Revenue share'),
@@ -208,7 +206,7 @@ export const products: Record<string, ProductContent> = {
     name: 'Air Shield',
     eyebrow: 'Disruption product',
     headline: 'Turn flight disruption into revenue',
-    lead: 'Give travellers a simple way to recover what they are owed when flights are delayed or cancelled — and earn on every booking that opts in, without adding a single step to your operation.',
+    lead: 'Give travellers a simple way to recover what they are owed when flights are delayed or cancelled, and earn on every booking that opts in, without adding a single step to your operation.',
     keyPoints: [
       'Compensation support customers understand at the point of sale',
       'Eligibility assessed against live flight data, not paperwork',
@@ -251,7 +249,6 @@ export const products: Record<string, ProductContent> = {
       {
         title: 'Disruption happens',
         description: 'A delay, cancellation or denied boarding is detected and the customer is prompted to start a claim.',
-        detail: 'Flight status is checked automatically, so eligibility is known before the customer writes anything.',
       },
       {
         title: 'We pursue the airline',
@@ -274,7 +271,7 @@ export const products: Record<string, ProductContent> = {
       'Events outside the regulatory scope of the route',
     ],
     coverageNote:
-      'Qualifying thresholds and entitlements follow the regulation applicable to each route. [placeholder — confirm the regulation list per market]',
+      'Qualifying thresholds and entitlements follow the regulation applicable to each route.',
     integration: sharedIntegration,
     code: codeBlock('air_shield'),
     commercials: sharedCommercials('Revenue share'),
@@ -292,7 +289,7 @@ export const products: Record<string, ProductContent> = {
       {
         question: 'Will it cannibalise our fare families?',
         answer:
-          'It has no overlap with fare flexibility — it addresses compensation for disruption, which fare families do not cover. It is priced and positioned separately in checkout.',
+          'It has no overlap with fare flexibility. It addresses compensation for disruption, which fare families do not cover. It is priced and positioned separately in checkout.',
       },
       {
         question: 'Which routes are supported?',
@@ -307,7 +304,7 @@ export const products: Record<string, ProductContent> = {
     name: 'Baggage Shield',
     eyebrow: 'Add-on product',
     headline: 'Turn baggage disruption into trust, and revenue',
-    lead: 'Support travellers the moment a bag goes missing, with active recovery and fixed compensation if it does not arrive — and earn on every booking that adds it.',
+    lead: 'Support travellers the moment a bag goes missing, with active recovery and fixed compensation if it does not arrive, and earn on every booking that adds it.',
     keyPoints: [
       'Active recovery in the first 96 hours, run by our team',
       'Fixed compensation if the bag is not returned in time',
@@ -339,7 +336,7 @@ export const products: Record<string, ProductContent> = {
       {
         icon: Sparkles,
         title: 'Trust at the right moment',
-        body: 'Placed just before payment, it reassures exactly where hesitation peaks — which is also where attach rate is highest.',
+        body: 'Placed just before payment, it reassures exactly where hesitation peaks, which is also where attach rate is highest.',
       },
     ],
     steps: [
@@ -350,7 +347,6 @@ export const products: Record<string, ProductContent> = {
       {
         title: 'A bag goes missing',
         description: 'The customer reports the disruption and shares the airline reference.',
-        detail: 'One short form, submitted to us — not to your support team.',
       },
       {
         title: 'Active recovery, 0–96 hours',
@@ -373,7 +369,7 @@ export const products: Record<string, ProductContent> = {
       'Claims without an airline property irregularity report',
     ],
     coverageNote:
-      'Compensation amounts and evidence requirements are set out in the customer terms. [placeholder — confirm payout tiers per market]',
+      'Compensation amounts and evidence requirements are set out in the customer terms.',
     integration: sharedIntegration,
     code: codeBlock('baggage_shield'),
     commercials: sharedCommercials('Revenue share'),
@@ -445,7 +441,6 @@ export const products: Record<string, ProductContent> = {
       {
         title: 'Choose the mix',
         description: 'Pick which products belong in the bundle and the discount you want to present.',
-        detail: 'Configurable per market and per route type.',
       },
       {
         title: 'One offer at checkout',
@@ -461,9 +456,9 @@ export const products: Record<string, ProductContent> = {
       },
     ],
     covered: [
-      'Refund Shield — refundable upgrade on the booking',
-      'Air Shield — flight disruption compensation support',
-      'Baggage Shield — baggage recovery and fixed compensation',
+      'Refund Shield: refundable upgrade on the booking',
+      'Air Shield: flight disruption compensation support',
+      'Baggage Shield: baggage recovery and fixed compensation',
       'Configurable bundle pricing per market',
     ],
     notCovered: [
@@ -471,7 +466,7 @@ export const products: Record<string, ProductContent> = {
       'Products not enabled on your account',
     ],
     coverageNote:
-      'Each component keeps its own terms and exclusions inside the bundle. [placeholder — confirm bundle discount range]',
+      'Each component keeps its own terms and exclusions inside the bundle.',
     integration: sharedIntegration,
     code: codeBlock('bundle_complete'),
     commercials: sharedCommercials('Revenue share'),
@@ -479,7 +474,7 @@ export const products: Record<string, ProductContent> = {
       {
         question: 'Can customers still buy products individually?',
         answer:
-          'Yes. You can present the bundle as the headline option and keep single products available, or run bundles exclusively — both are supported by the same integration.',
+          'Yes. You can present the bundle as the headline option and keep single products available, or run bundles exclusively. Both are supported by the same integration.',
       },
       {
         question: 'Does the discount reduce our revenue?',

@@ -13,7 +13,7 @@ export function BentoGrid() {
       <SectionHeading
         eyebrow="Products"
         title="A unified suite of revenue products"
-        description="Four products, one integration, one contract. Turn them on individually or bundle them together — every one is designed to convert inside your existing checkout."
+        description="Four products, one integration, one contract. Turn them on individually or bundle them together. Every one is designed to convert inside your existing checkout."
       />
 
       <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[minmax(0,auto)]">
@@ -23,7 +23,7 @@ export function BentoGrid() {
           variant="ink"
           eyebrow="Flagship"
           title="Refund Shield"
-          description="Let customers upgrade to a refundable booking at checkout. They get certainty if plans change; you keep a high-margin share of every sale — with zero risk on your balance sheet."
+          description="Let customers upgrade to a refundable booking at checkout. They get certainty if plans change; you keep a high-margin share of every sale, with zero risk on your balance sheet."
           cta="Explore Refund Shield"
           className="lg:col-span-2 dl1"
           layout="split"
@@ -68,7 +68,7 @@ export function BentoGrid() {
           variant="glass"
           eyebrow="One integration"
           title="Built to sit inside your checkout"
-          description="A single API and a hosted UI layer that inherits your styling. Multi-currency, multi-language, and localised pricing from day one — nothing looks bolted on."
+          description="A single API and a hosted UI layer that inherits your styling. Multi-currency, multi-language, and localised pricing from day one, so nothing looks bolted on."
           className="dl5"
           visual={
             <div className="code-block rounded-xl p-4">

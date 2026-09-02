@@ -6,7 +6,7 @@ const items: FaqItem[] = [
   {
     question: 'How long does integration actually take?',
     answer:
-      'Most partners are live in days. The fastest path is our hosted offer component — one script and one API call. Teams that want full control over the UI use the quote and purchase endpoints directly and typically ship in one sprint.',
+      'Most partners are live in days. The fastest path is our hosted offer component: one script and one API call. Teams that want full control over the UI use the quote and purchase endpoints directly and typically ship in one sprint.',
   },
   {
     question: 'Do we take on any risk?',
@@ -16,7 +16,7 @@ const items: FaqItem[] = [
   {
     question: 'Who handles claims and customer support?',
     answer:
-      'We do. Claims are assessed automatically wherever possible — a delayed bag or a disrupted flight is verified against live data rather than a form — and anything that needs a human is handled by our team, not yours.',
+      'We do. Claims are assessed automatically wherever possible. A delayed bag or a disrupted flight is verified against live data rather than a form, and anything that needs a human is handled by our team, not yours.',
   },
   {
     question: 'How is pricing set?',
@@ -43,7 +43,7 @@ export function FaqSection() {
           <SectionHeading
             eyebrow="Questions"
             title="What partners ask before signing"
-            description="If something is not covered here, our commercial and engineering teams answer directly — no discovery call required."
+            description="If something is not covered here, our commercial and engineering teams answer directly, with no discovery call required."
           />
           <div className="r dl2 mt-8">
             <CtaLink to="/contact" variant="outline">

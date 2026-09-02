@@ -79,8 +79,8 @@ export function Hero() {
           className={`hin t-lead mx-auto mb-9 max-w-2xl text-center ${!ready ? 'opacity-0' : ''}`}
           style={step('0.3s')}
         >
-          Embed high-margin ancillary products into your checkout — refundable bookings, baggage
-          and disruption cover — with one integration, no balance-sheet risk, and a go-live measured
+          Embed high-margin ancillary products into your checkout: refundable bookings, baggage
+          and disruption cover, with one integration, no balance-sheet risk, and a go-live measured
           in days.
         </p>
 

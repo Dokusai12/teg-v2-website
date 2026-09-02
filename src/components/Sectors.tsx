@@ -67,7 +67,7 @@ export function Sectors() {
                 key={s.name}
                 to={s.path}
                 aria-label={`Go to ${s.name} industry page`}
-                className={`rr dl${i + 1} surface-1 lift focus-ring group relative flex flex-col gap-3 overflow-hidden p-6 no-underline`}
+                className={`rr dl${i + 1} surface-1 lift focus-ring group relative row-span-3 grid grid-rows-subgrid gap-3 overflow-hidden p-6 no-underline`}
               >
                 <div className="flex items-start justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/[0.08] transition-[background-color,transform] duration-3 ease-spring group-hover:scale-105 group-hover:bg-accent/[0.14]">
@@ -76,12 +76,12 @@ export function Sectors() {
                   <ArrowUpRight className="arrow-slide h-4 w-4 text-muted-foreground opacity-0 transition-opacity duration-2 group-hover:opacity-100" />
                 </div>
                 <div>
-                  <div className="text-[15.5px] font-medium text-foreground">{s.name}</div>
+                  <div className="text-[15.5px] font-medium leading-snug text-foreground">{s.name}</div>
                   <div className="t-caption mt-1">{s.examples}</div>
                 </div>
-                <p className="t-caption mt-auto border-t border-border pt-3 text-muted-foreground">
-                  {s.note}
-                </p>
+                <div className="border-t border-border pt-3">
+                  <p className="t-caption text-muted-foreground">{s.note}</p>
+                </div>
               </Link>
             );
           })}

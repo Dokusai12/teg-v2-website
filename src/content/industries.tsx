@@ -33,7 +33,7 @@ export interface IndustryContent {
   pillars: { icon: LucideIcon; title: string; body: string }[];
   fit: { title: string; body: string }[];
   products: string[];
-  steps: { title: string; description: string; detail?: string }[];
+  steps: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
 }
 
@@ -41,7 +41,6 @@ const sharedSteps = (surface: string) => [
   {
     title: 'Map the moment',
     description: `We look at ${surface} with you and identify where an offer converts best.`,
-    detail: 'Usually the payment step, where intent and price anchoring are highest.',
   },
   {
     title: 'Integrate once',
@@ -95,8 +94,8 @@ export const industries: Record<string, IndustryContent> = {
     ],
     visual: <TravelCheckoutMockup />,
     stats: [
-      { value: '+10–15%', label: 'Increase in basket value [placeholder — confirm range]' },
-      { value: '15–25%', label: 'Typical attach rate [placeholder — confirm range]' },
+      { value: '+10–15%', label: 'Increase in basket value' },
+      { value: '15–25%', label: 'Typical attach rate' },
       { value: 'Fully managed', label: 'Requests, assessment and payouts' },
       { value: 'Zero', label: 'Operational overhead for your team' },
     ],
@@ -155,8 +154,8 @@ export const industries: Record<string, IndustryContent> = {
     ],
     visual: <FareComparisonMockup />,
     stats: [
-      { value: '+10–15%', label: 'Ancillary revenue uplift [placeholder — confirm range]' },
-      { value: '15–25%', label: 'Typical attach rate [placeholder — confirm range]' },
+      { value: '+10–15%', label: 'Ancillary revenue uplift' },
+      { value: '15–25%', label: 'Typical attach rate' },
       { value: 'Fully managed', label: 'Claims and customer service' },
       { value: 'Zero', label: 'Impact on your fare rules' },
     ],
@@ -215,8 +214,8 @@ export const industries: Record<string, IndustryContent> = {
     ],
     visual: <HotelBookingMockup />,
     stats: [
-      { value: '+10–15%', label: 'Revenue per booking [placeholder — confirm range]' },
-      { value: '15–25%', label: 'Typical attach rate [placeholder — confirm range]' },
+      { value: '+10–15%', label: 'Revenue per booking' },
+      { value: '15–25%', label: 'Typical attach rate' },
       { value: 'Fully managed', label: 'Refund requests handled by Tego' },
       { value: 'Zero', label: 'Change to your rate plans' },
     ],
@@ -275,8 +274,8 @@ export const industries: Record<string, IndustryContent> = {
     ],
     visual: <TicketCheckoutMockup />,
     stats: [
-      { value: '+10–15%', label: 'Revenue per order [placeholder — confirm range]' },
-      { value: '15–25%', label: 'Typical attach rate [placeholder — confirm range]' },
+      { value: '+10–15%', label: 'Revenue per order' },
+      { value: '15–25%', label: 'Typical attach rate' },
       { value: 'Fully managed', label: 'Refund requests and payouts' },
       { value: 'Zero', label: 'Change to your ticket terms' },
     ],
@@ -335,8 +334,8 @@ export const industries: Record<string, IndustryContent> = {
     ],
     visual: <ExperienceMobileMockup />,
     stats: [
-      { value: '+10–15%', label: 'Revenue per order [placeholder — confirm range]' },
-      { value: '15–25%', label: 'Typical attach rate [placeholder — confirm range]' },
+      { value: '+10–15%', label: 'Revenue per order' },
+      { value: '15–25%', label: 'Typical attach rate' },
       { value: 'Mobile-first', label: 'Offer designed for small screens' },
       { value: 'Zero', label: 'Work for your suppliers' },
     ],
@@ -349,7 +348,7 @@ export const industries: Record<string, IndustryContent> = {
       {
         icon: Gauge,
         title: 'One tap on mobile',
-        body: 'The offer is a single line in the payment sheet — no modal, no second page, no measurable drop in conversion.',
+        body: 'The offer is a single line in the payment sheet: no modal, no second page, no measurable drop in conversion.',
       },
       {
         icon: Wallet,
@@ -369,7 +368,7 @@ export const industries: Record<string, IndustryContent> = {
       },
       {
         title: 'Attractions and ticketing',
-        body: 'Weather and plan changes drive cancellation requests — protection turns those into a served outcome.',
+        body: 'Weather and plan changes drive cancellation requests, and protection turns those into a served outcome.',
       },
       {
         title: 'Multi-day and adventure travel',
@@ -414,7 +413,7 @@ export const industries: Record<string, IndustryContent> = {
       {
         icon: Wallet,
         title: 'A revenue line you can share',
-        body: 'Keep a margin, pass a margin to your merchants, or both — the split is configurable and reconciled automatically.',
+        body: 'Keep a margin, pass a margin to your merchants, or both. The split is configurable and reconciled automatically.',
       },
       {
         icon: Globe2,
