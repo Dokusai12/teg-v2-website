@@ -5,34 +5,61 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 228 20% 10%;
+    --foreground: 228 22% 9%;
 
-    --card: 225 20% 98%;
-    --card-foreground: 228 20% 10%;
+    --card: 228 24% 98.5%;
+    --card-foreground: 228 22% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 228 20% 10%;
+    --popover-foreground: 228 22% 9%;
 
-    --primary: 228 20% 10%;
+    --primary: 228 22% 9%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 225 20% 96%;
-    --secondary-foreground: 228 20% 10%;
+    --secondary: 226 26% 96.5%;
+    --secondary-foreground: 228 22% 9%;
 
-    --muted: 225 14% 95%;
-    --muted-foreground: 225 8% 42%;
+    --muted: 226 20% 95%;
+    --muted-foreground: 226 10% 44%;
 
     --accent: 228 76% 59%;
     --accent-foreground: 0 0% 100%;
+    --accent-soft: 228 76% 96.5%;
+    --accent-strong: 232 72% 50%;
+
+    /* Authority surface — deep navy bands that break the white scroll */
+    --ink: 229 34% 9%;
+    --ink-elevated: 229 28% 13%;
+    --ink-foreground: 226 30% 97%;
+    --ink-muted: 226 14% 64%;
+    --ink-border: 226 20% 22%;
+
+    /* Positive metric signal */
+    --signal: 152 52% 36%;
+    --signal-soft: 152 45% 94%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 225 14% 90%;
-    --input: 225 14% 90%;
+    --border: 226 18% 90.5%;
+    --input: 226 18% 90.5%;
     --ring: 228 76% 59%;
 
     --radius: 0.75rem;
+
+    /* Elevation scale — three defined levels, nothing ad-hoc */
+    --elev-1: 0 1px 2px hsl(228 24% 12% / 0.04), 0 1px 3px hsl(228 24% 12% / 0.03);
+    --elev-2: 0 2px 4px hsl(228 24% 12% / 0.04), 0 10px 28px -12px hsl(228 24% 12% / 0.12);
+    --elev-3: 0 4px 8px hsl(228 24% 12% / 0.05), 0 28px 64px -24px hsl(228 30% 14% / 0.22);
+
+    /* Motion tokens — one easing family, one duration ladder */
+    --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+    --dur-1: 140ms;
+    --dur-2: 220ms;
+    --dur-3: 380ms;
+    --dur-4: 620ms;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -46,25 +73,37 @@
   }
 
   .dark {
-    --background: 228 20% 6%;
-    --foreground: 0 0% 96%;
-    --card: 228 20% 10%;
-    --card-foreground: 0 0% 96%;
-    --popover: 228 20% 10%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 0 0% 96%;
-    --primary-foreground: 228 20% 10%;
-    --secondary: 228 18% 14%;
-    --secondary-foreground: 0 0% 96%;
-    --muted: 228 18% 14%;
-    --muted-foreground: 225 8% 58%;
-    --accent: 228 76% 59%;
+    --background: 229 34% 7%;
+    --foreground: 226 30% 97%;
+    --card: 229 28% 11%;
+    --card-foreground: 226 30% 97%;
+    --popover: 229 28% 11%;
+    --popover-foreground: 226 30% 97%;
+    --primary: 226 30% 97%;
+    --primary-foreground: 229 34% 9%;
+    --secondary: 229 24% 14%;
+    --secondary-foreground: 226 30% 97%;
+    --muted: 229 24% 14%;
+    --muted-foreground: 226 12% 62%;
+    --accent: 228 76% 62%;
     --accent-foreground: 0 0% 100%;
+    --accent-soft: 229 40% 18%;
+    --accent-strong: 228 80% 68%;
+    --ink: 229 34% 7%;
+    --ink-elevated: 229 28% 11%;
+    --ink-foreground: 226 30% 97%;
+    --ink-muted: 226 12% 62%;
+    --ink-border: 226 18% 20%;
+    --signal: 152 48% 52%;
+    --signal-soft: 152 30% 16%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
-    --border: 228 18% 16%;
-    --input: 228 18% 16%;
-    --ring: 228 76% 59%;
+    --border: 229 20% 17%;
+    --input: 229 20% 17%;
+    --ring: 228 76% 62%;
+    --elev-1: 0 1px 2px hsl(0 0% 0% / 0.3);
+    --elev-2: 0 2px 4px hsl(0 0% 0% / 0.3), 0 10px 28px -12px hsl(0 0% 0% / 0.5);
+    --elev-3: 0 4px 8px hsl(0 0% 0% / 0.3), 0 28px 64px -24px hsl(0 0% 0% / 0.6);
   }
 }
 
@@ -75,8 +114,12 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
   html { scroll-behavior: smooth; }
+  ::selection {
+    background: hsl(var(--accent) / 0.18);
+  }
   @media (max-width: 1023px) {
     body {
       overflow-x: clip;
@@ -110,11 +153,94 @@
     transform: none !important;
     transition: none !important;
   }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
+/* ─────────────────────────────────────────────
+   Typography scale
+   ───────────────────────────────────────────── */
 @layer components {
   .font-display {
     font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  .t-eyebrow {
+    @apply text-[13px] font-semibold uppercase tracking-[0.14em] text-accent;
+  }
+
+  .t-display {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply text-[clamp(2.4rem,5.6vw,4.5rem)] font-semibold leading-[1.04] tracking-[-0.032em];
+  }
+
+  .t-h1 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply text-[clamp(2rem,4.6vw,3.4rem)] font-semibold leading-[1.08] tracking-[-0.028em];
+  }
+
+  .t-h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply text-[clamp(1.75rem,3.2vw,2.7rem)] font-semibold leading-[1.12] tracking-[-0.024em];
+  }
+
+  .t-h3 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    @apply text-[clamp(1.15rem,1.6vw,1.375rem)] font-semibold leading-[1.25] tracking-[-0.014em];
+  }
+
+  .t-lead {
+    @apply text-[17px] md:text-[19px] leading-[1.65] text-muted-foreground;
+  }
+
+  .t-body {
+    @apply text-[15px] leading-[1.7] text-muted-foreground;
+  }
+
+  .t-small {
+    @apply text-[13.5px] leading-[1.65] text-muted-foreground;
+  }
+
+  .t-caption {
+    @apply text-[12px] leading-[1.5] text-muted-foreground;
+  }
+
+  .t-num {
+    @apply tabular-nums;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  /* Card elevation system */
+  .surface-1 {
+    @apply rounded-2xl border border-border bg-card;
+    box-shadow: var(--elev-1);
+  }
+  .surface-2 {
+    @apply rounded-2xl border border-border bg-background;
+    box-shadow: var(--elev-2);
+  }
+  .surface-3 {
+    @apply rounded-2xl border border-border bg-background;
+    box-shadow: var(--elev-3);
+  }
+  .surface-ink {
+    @apply rounded-2xl border text-ink-foreground;
+    background-color: hsl(var(--ink));
+    border-color: hsl(var(--ink-border));
+  }
+  .surface-glass {
+    @apply rounded-2xl border border-border/70;
+    background-color: hsl(var(--background) / 0.72);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: var(--elev-1);
   }
 }
 
@@ -137,77 +263,141 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(190 90% 45%), hsl(228 76% 59%), hsl(280 60% 60%));
+    background-image: linear-gradient(120deg, hsl(var(--accent-strong)), hsl(var(--accent)), hsl(206 84% 56%));
+  }
+
+  /* Hairline grid texture for ink bands */
+  .ink-grid {
+    background-image:
+      linear-gradient(hsl(var(--ink-foreground) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ink-foreground) / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .section-y {
+    @apply py-20 md:py-28;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1200px] px-4 lg:px-5;
+  }
+
+  /* Interruptible, GPU-only interactions */
+  .lift {
+    transition:
+      transform var(--dur-2) var(--ease-brand),
+      box-shadow var(--dur-2) var(--ease-brand),
+      border-color var(--dur-2) var(--ease-brand);
+    will-change: transform;
+  }
+  .lift:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--elev-2);
+  }
+  .lift:active {
+    transform: translateY(-1px);
+    transition-duration: var(--dur-1);
+  }
+
+  .press {
+    transition:
+      transform var(--dur-1) var(--ease-brand),
+      background-color var(--dur-2) var(--ease-brand),
+      color var(--dur-2) var(--ease-brand),
+      opacity var(--dur-2) var(--ease-brand),
+      filter var(--dur-2) var(--ease-brand),
+      box-shadow var(--dur-2) var(--ease-brand);
+  }
+  .press:active {
+    transform: scale(0.975);
+  }
+
+  /* Arrow that resolves on hover of a parent .group */
+  .arrow-slide {
+    transition: transform var(--dur-2) var(--ease-brand);
+  }
+  .group:hover .arrow-slide {
+    transform: translateX(3px);
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }
 
-/* ── Scroll reveal ── */
-.r {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.r.v { opacity: 1; transform: translateY(0); }
-.rl {
-  opacity: 0;
-  transform: translateX(-32px);
-  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.rl.v { opacity: 1; transform: translateX(0); }
-.rr {
-  opacity: 0;
-  transform: translateX(32px);
-  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.rr.v { opacity: 1; transform: translateX(0); }
+/* ── Scroll reveal — one system, one easing family ── */
+.r,
+.rl,
+.rr,
 .rs {
   opacity: 0;
-  transform: scale(0.96);
-  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    opacity var(--dur-4) var(--ease-brand),
+    transform var(--dur-4) var(--ease-brand);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
 }
-.rs.v { opacity: 1; transform: scale(1); }
+.r { transform: translate3d(0, 26px, 0); }
+.rl { transform: translate3d(-26px, 0, 0); }
+.rr { transform: translate3d(26px, 0, 0); }
+.rs { transform: scale(0.975) translate3d(0, 12px, 0); }
 
-.dl1{transition-delay:.08s}.dl2{transition-delay:.16s}.dl3{transition-delay:.24s}.dl4{transition-delay:.32s}.dl5{transition-delay:.4s}
+.r.v,
+.rl.v,
+.rr.v,
+.rs.v {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Parallel stagger — short, overlapping, never sequential-feeling */
+.dl1 { --reveal-delay: 60ms; }
+.dl2 { --reveal-delay: 115ms; }
+.dl3 { --reveal-delay: 165ms; }
+.dl4 { --reveal-delay: 210ms; }
+.dl5 { --reveal-delay: 250ms; }
+.dl6 { --reveal-delay: 285ms; }
 
 /* Hero entrance */
 @keyframes fade-in-up {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 22px, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 .hin {
   opacity: 0;
-  animation: fade-in-up 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: fade-in-up var(--dur-4) var(--ease-brand) forwards;
 }
 
-/* Gradient mesh */
+/* Gradient mesh — restrained, brand-blue only */
 @keyframes mesh-move {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -20px) scale(1.05); }
-  50% { transform: translate(-10px, 20px) scale(0.98); }
-  75% { transform: translate(-30px, -10px) scale(1.02); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(24px, -18px, 0) scale(1.04); }
+  66% { transform: translate3d(-18px, 14px, 0) scale(0.98); }
 }
 
 /* Nav */
 .nav-s {
-  background: hsl(0 0% 100% / 0.85);
+  background: hsl(var(--background) / 0.82);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 0 1px 3px hsl(0 0% 0% / 0.04);
+  border-bottom: 1px solid hsl(var(--border) / 0.8);
+  box-shadow: 0 1px 3px hsl(228 24% 12% / 0.04);
 }
 
 /* Code block */
 .code-block {
-  background: hsl(228 25% 8%);
-  color: hsl(225 14% 70%);
+  background: hsl(var(--ink));
+  color: hsl(226 14% 72%);
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   font-size: 13px;
   line-height: 1.7;
 }
-.code-block .ck { color: hsl(228 60% 72%); }
-.code-block .cs { color: hsl(145 60% 55%); }
+.code-block .ck { color: hsl(228 70% 74%); }
+.code-block .cs { color: hsl(152 55% 60%); }
 .code-block .cn { color: hsl(30 80% 65%); }
-.code-block .cc { color: hsl(225 8% 40%); }
-.code-block .cp { color: hsl(330 60% 65%); }
+.code-block .cc { color: hsl(226 10% 44%); }
+.code-block .cp { color: hsl(330 60% 68%); }
 
 /* Marquee — translate3d reduces subpixel / white flash glitches on mobile WebKit during animation */
 @keyframes marquee {
@@ -218,33 +408,34 @@
   animation: marquee 40s linear infinite;
 }
 
-/* Industry strip — same as bg-secondary/30 on all breakpoints (--secondary follows light/dark) */
+/* Industry strip */
 .trust-marquee-section {
-  background-color: hsl(var(--secondary) / 0.3);
+  background-color: hsl(var(--secondary) / 0.45);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Mobile-only perf (max-width 768px): no effect on desktop layout or styles above this breakpoint ── */
+/* Counting numbers should never reflow their container */
+.count-slot {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Mobile-only perf (max-width 768px) ── */
 @media (max-width: 768px) {
-  /* Marquee: drop extra compositor layers that cost scroll/GPU on iOS */
   .trust-marquee-track {
     will-change: auto !important;
     backface-visibility: visible !important;
   }
 
-  /* Hero gradient mesh: stop animation + cap blur (large filter radii are costly while scrolling) */
   .hero-mesh .hero-mesh-blob {
     animation: none !important;
     filter: blur(56px) !important;
   }
 
-  /* Scrolled nav: cheaper backdrop than full desktop blur */
   .nav-s {
     backdrop-filter: blur(10px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
   }
 
-  /* Home below-fold: defer layout/paint until near viewport (IDs only used on Index) */
   #products,
   #customers,
   #solutions,
@@ -252,26 +443,13 @@
     content-visibility: auto;
   }
 
-  #products {
-    contain-intrinsic-size: 1px 880px;
-  }
+  #products { contain-intrinsic-size: 1px 880px; }
+  #customers { contain-intrinsic-size: 1px 520px; }
+  #solutions { contain-intrinsic-size: 1px 700px; }
+  #contact { contain-intrinsic-size: 1px 340px; }
 
-  #customers {
-    contain-intrinsic-size: 1px 520px;
-  }
-
-  #solutions {
-    contain-intrinsic-size: 1px 700px;
-  }
-
-  #contact {
-    contain-intrinsic-size: 1px 340px;
-  }
-
-  /* Drop large decorative blurs inside home bento + CTA (filter compositing cost) */
   .bento-ambient-blur,
   .cta-ambient-blur {
     display: none !important;
   }
 }
-
