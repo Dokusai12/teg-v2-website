@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 228 20% 10%;
+
+    --card: 225 20% 98%;
+    --card-foreground: 228 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 20% 10%;
+
+    --primary: 228 20% 10%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 225 20% 96%;
+    --secondary-foreground: 228 20% 10%;
+
+    --muted: 225 14% 95%;
+    --muted-foreground: 225 8% 42%;
+
+    --accent: 228 76% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 14% 90%;
+    --input: 225 14% 90%;
+    --ring: 228 76% 59%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sky: 200 70% 93%;
+  }
+
+  .dark {
+    --background: 228 20% 6%;
+    --foreground: 0 0% 96%;
+    --card: 228 20% 10%;
+    --card-foreground: 0 0% 96%;
+    --popover: 228 20% 10%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 228 20% 10%;
+    --secondary: 228 18% 14%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 228 18% 14%;
+    --muted-foreground: 225 8% 58%;
+    --accent: 228 76% 59%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 18% 16%;
+    --input: 228 18% 16%;
+    --ring: 228 76% 59%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html { scroll-behavior: smooth; }
+  @media (max-width: 1023px) {
+    body {
+      overflow-x: clip;
+      -webkit-tap-highlight-color: rgba(56, 105, 237, 0.14);
+    }
+    /* Snappier taps; desktop unchanged (this block is max-width only) */
+    button,
+    [type="button"],
+    [type="submit"],
+    [type="reset"] {
+      touch-action: manipulation;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hin,
+  .float-delayed,
+  .marquee,
+  .trust-marquee-track {
+    animation: none !important;
+  }
+  .r,
+  .rl,
+  .rr,
+  .rs {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-8px) rotate(-0.5deg); }
+    66% { transform: translateY(-16px) rotate(0.5deg); }
+  }
+  .float-delayed {
+    animation: float-delayed 10s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  /* Match v4 checkout mock primary (teal/green) inside bento */
+  .v4-booking-mock-root {
+    --primary: 163 100% 42%;
+    --primary-foreground: 220 40% 8%;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(190 90% 45%), hsl(228 76% 59%), hsl(280 60% 60%));
+  }
+}
+
+/* ── Scroll reveal ── */
+.r {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.r.v { opacity: 1; transform: translateY(0); }
+.rl {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.rl.v { opacity: 1; transform: translateX(0); }
+.rr {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.rr.v { opacity: 1; transform: translateX(0); }
+.rs {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.rs.v { opacity: 1; transform: scale(1); }
+
+.dl1{transition-delay:.08s}.dl2{transition-delay:.16s}.dl3{transition-delay:.24s}.dl4{transition-delay:.32s}.dl5{transition-delay:.4s}
+
+/* Hero entrance */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hin {
+  opacity: 0;
+  animation: fade-in-up 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Gradient mesh */
+@keyframes mesh-move {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-10px, 20px) scale(0.98); }
+  75% { transform: translate(-30px, -10px) scale(1.02); }
+}
+
+/* Nav */
+.nav-s {
+  background: hsl(0 0% 100% / 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 1px 3px hsl(0 0% 0% / 0.04);
+}
+
+/* Code block */
+.code-block {
+  background: hsl(228 25% 8%);
+  color: hsl(225 14% 70%);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.code-block .ck { color: hsl(228 60% 72%); }
+.code-block .cs { color: hsl(145 60% 55%); }
+.code-block .cn { color: hsl(30 80% 65%); }
+.code-block .cc { color: hsl(225 8% 40%); }
+.code-block .cp { color: hsl(330 60% 65%); }
+
+/* Marquee — translate3d reduces subpixel / white flash glitches on mobile WebKit during animation */
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Industry strip — same as bg-secondary/30 on all breakpoints (--secondary follows light/dark) */
+.trust-marquee-section {
+  background-color: hsl(var(--secondary) / 0.3);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Mobile-only perf (max-width 768px): no effect on desktop layout or styles above this breakpoint ── */
+@media (max-width: 768px) {
+  /* Marquee: drop extra compositor layers that cost scroll/GPU on iOS */
+  .trust-marquee-track {
+    will-change: auto !important;
+    backface-visibility: visible !important;
+  }
+
+  /* Hero gradient mesh: stop animation + cap blur (large filter radii are costly while scrolling) */
+  .hero-mesh .hero-mesh-blob {
+    animation: none !important;
+    filter: blur(56px) !important;
+  }
+
+  /* Scrolled nav: cheaper backdrop than full desktop blur */
+  .nav-s {
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+  }
+
+  /* Home below-fold: defer layout/paint until near viewport (IDs only used on Index) */
+  #products,
+  #customers,
+  #solutions,
+  #contact {
+    content-visibility: auto;
+  }
+
+  #products {
+    contain-intrinsic-size: 1px 880px;
+  }
+
+  #customers {
+    contain-intrinsic-size: 1px 520px;
+  }
+
+  #solutions {
+    contain-intrinsic-size: 1px 700px;
+  }
+
+  #contact {
+    contain-intrinsic-size: 1px 340px;
+  }
+
+  /* Drop large decorative blurs inside home bento + CTA (filter compositing cost) */
+  .bento-ambient-blur,
+  .cta-ambient-blur {
+    display: none !important;
+  }
+}
+
