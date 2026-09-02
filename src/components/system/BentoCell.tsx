@@ -38,8 +38,40 @@ export function BentoCell({
   visual,
   cta,
   revealClass = 'rs',
+  layout = 'stack',
 }: BentoCellProps) {
   const ink = variant === 'ink';
+
+  const copy = (
+    <>
+      {eyebrow && (
+        <p
+          className={cn(
+            'mb-2 text-[12px] font-semibold uppercase tracking-[0.13em]',
+            ink ? 'text-accent-strong' : 'text-accent',
+          )}
+        >
+          {eyebrow}
+        </p>
+      )}
+      <h3 className={cn(layout === 'split' ? 't-h2' : 't-h3', ink ? 'text-ink-foreground' : 'text-foreground')}>
+        {title}
+      </h3>
+      <p className={cn('t-small mt-2 max-w-md', ink && 'text-ink-muted')}>{description}</p>
+
+      {cta && (
+        <span
+          className={cn(
+            'mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-medium',
+            ink ? 'text-ink-foreground' : 'text-accent',
+          )}
+        >
+          {cta}
+          <ArrowUpRight className="arrow-slide h-4 w-4" />
+        </span>
+      )}
+    </>
+  );
 
   const body = (
     <>
@@ -51,34 +83,17 @@ export function BentoCell({
           aria-hidden
         />
       )}
-      <div className="relative z-10 flex h-full flex-col">
-        {eyebrow && (
-          <p
-            className={cn(
-              'mb-2 text-[12px] font-semibold uppercase tracking-[0.13em]',
-              ink ? 'text-accent-strong' : 'text-accent',
-            )}
-          >
-            {eyebrow}
-          </p>
-        )}
-        <h3 className={cn('t-h3', ink ? 'text-ink-foreground' : 'text-foreground')}>{title}</h3>
-        <p className={cn('t-small mt-2 max-w-md', ink && 'text-ink-muted')}>{description}</p>
-
-        {visual && <div className="mt-6 flex-1">{visual}</div>}
-
-        {cta && (
-          <span
-            className={cn(
-              'mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-medium',
-              ink ? 'text-ink-foreground' : 'text-accent',
-            )}
-          >
-            {cta}
-            <ArrowUpRight className="arrow-slide h-4 w-4" />
-          </span>
-        )}
-      </div>
+      {layout === 'split' ? (
+        <div className="relative z-10 grid h-full items-center gap-8 md:grid-cols-[5fr_7fr]">
+          <div className="flex flex-col items-start">{copy}</div>
+          {visual && <div className="relative flex items-center justify-center">{visual}</div>}
+        </div>
+      ) : (
+        <div className="relative z-10 flex h-full flex-col">
+          {copy}
+          {visual && <div className="mt-6 flex-1">{visual}</div>}
+        </div>
+      )}
     </>
   );
 
