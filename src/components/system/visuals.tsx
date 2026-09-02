@@ -64,6 +64,94 @@ export function AttachRateMeter({ ink = false }: { ink?: boolean }) {
   );
 }
 
+/* ── Refund Shield: vertical checkout card (single column) ───────── */
+export function CheckoutCard() {
+  return (
+    <div className="relative mx-auto w-full max-w-[300px]">
+      {/* ambient glow */}
+      <div
+        aria-hidden
+        className="absolute -inset-6 rounded-[32px] bg-accent/15 blur-2xl transition-opacity duration-4 ease-brand group-hover:opacity-80"
+      />
+
+      <div className="relative overflow-hidden rounded-3xl border border-ink-border bg-card shadow-elev-3 transition-transform duration-4 ease-brand group-hover:-translate-y-1">
+        {/* browser chrome */}
+        <div className="flex items-center gap-2 border-b border-border bg-secondary/60 px-4 py-3">
+          <span className="flex gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#f07d7d]/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#f2c94c]/80" />
+            <span className="h-2.5 w-2.5 rounded-full bg-signal/70" />
+          </span>
+          <span className="mx-auto rounded-full bg-background px-4 py-1 text-[10px] text-muted-foreground">
+            partner-travel.com/checkout
+          </span>
+          <span className="w-9" />
+        </div>
+
+        <div className="relative p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Your trip
+          </p>
+
+          {/* trip summary */}
+          <div className="mt-2 flex items-center gap-3 rounded-2xl border border-border bg-secondary/50 p-3.5">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/12">
+              <Plane className="h-5 w-5 text-accent" strokeWidth={1.75} />
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-[13.5px] font-semibold leading-tight text-foreground">
+                London → Barcelona
+              </p>
+              <p className="t-caption mt-0.5">15 Jul – 22 Jul · 2 passengers</p>
+            </div>
+            <span className="t-num text-[15px] font-semibold text-foreground">£438</span>
+          </div>
+
+          {/* Refund Shield add-on */}
+          <div className="relative mt-3 rounded-2xl border border-signal/30 bg-signal/[0.07] p-3.5 transition-[border-color,background-color,box-shadow] duration-3 ease-brand group-hover:border-signal/50 group-hover:bg-signal/[0.1] group-hover:shadow-[0_0_24px_-6px_hsl(var(--signal)/0.35)]">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-signal">
+                <Shield className="h-5 w-5 text-background" strokeWidth={2} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[13.5px] font-semibold text-foreground">Refund Shield</p>
+                <p className="t-caption">Full refund if you can't travel</p>
+              </div>
+              <span className="t-num text-[14px] font-semibold text-signal">+£24</span>
+            </div>
+
+            <div className="mt-3 flex items-center gap-2">
+              <span className="flex h-[18px] w-[18px] items-center justify-center rounded-[5px] bg-signal transition-transform duration-2 ease-spring group-hover:scale-110">
+                <Check className="h-3 w-3 text-background" strokeWidth={4} />
+              </span>
+              <span className="text-[12px] font-medium text-foreground">Yes, protect my trip</span>
+            </div>
+          </div>
+
+          {/* floating revenue pill */}
+          <div
+            className="absolute -right-2 top-[118px] rounded-2xl border border-border bg-card px-4 py-2.5 text-center shadow-elev-2 transition-transform duration-3 ease-spring group-hover:-translate-y-1"
+            aria-hidden
+          >
+            <p className="t-num text-[16px] font-bold leading-none text-signal">+£24</p>
+            <p className="mt-1 text-[9.5px] font-medium text-muted-foreground">New Revenue</p>
+          </div>
+
+          {/* total + CTA */}
+          <div className="mt-4 flex items-center justify-between px-1">
+            <span className="text-[13.5px] font-semibold text-foreground">Total</span>
+            <span className="t-num text-[19px] font-bold text-foreground">£462</span>
+          </div>
+
+          <div className="mt-3 rounded-xl bg-foreground py-3 text-center text-[13px] font-semibold text-background transition-opacity duration-2 group-hover:opacity-90">
+            Complete Booking
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ── Refund Shield: full-width checkout — traveller view + partner revenue ── */
 export function CheckoutShield() {
   return (
