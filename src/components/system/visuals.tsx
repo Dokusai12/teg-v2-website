@@ -97,7 +97,7 @@ export function CheckoutShield() {
           {/* trip summary */}
           <div className="mt-2 flex items-center gap-3 rounded-xl border border-border bg-secondary/50 p-3">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/12">
-              <Plane className="h-4.5 w-4.5 h-[18px] w-[18px] text-accent" strokeWidth={1.75} />
+              <Plane className="h-[18px] w-[18px] text-accent" strokeWidth={1.75} />
             </span>
             <div className="min-w-0 flex-1">
               <p className="text-[13px] font-semibold text-foreground">London → Barcelona</p>
