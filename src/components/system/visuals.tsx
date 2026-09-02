@@ -11,7 +11,7 @@ const rowBase =
 
 /* ── Refund Shield: attach-rate meter + revenue curve ───────────── */
 export function AttachRateMeter({ ink = false }: { ink?: boolean }) {
-  const bars = [38, 44, 41, 52, 49, 58, 55, 64, 61, 72, 69, 78, 82, 88, 94];
+  const bars = [18, 26, 22, 34, 30, 42, 38, 50, 46, 60, 56, 70, 78, 88, 100];
   return (
     <div
       className={cn(
