@@ -8,9 +8,9 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 const legalLinks = [
   { to: '/privacy-policy', label: 'Privacy Policy' },
   { to: '/terms', label: 'Terms of Use' },
-  { to: '/cookies', label: 'Cookie Policy' },
+  { to: '/cookies', label: 'Cookies Policy' },
   { to: '/modern-slavery', label: 'Modern Slavery Statement' },
-  { to: '/anti-bribery', label: 'Anti-Bribery & Corruption' },
+  { to: '/anti-bribery', label: 'Anti-Bribery and Corruption Policy' },
 ];
 
 interface LegalLayoutProps {

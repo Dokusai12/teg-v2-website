@@ -469,3 +469,10 @@
 @media (prefers-reduced-motion: reduce) {
   .diagram-pulse { animation: none; opacity: 0.6; top: 50%; }
 }
+
+/* Legal / policy prose */
+.legal-prose > *:first-child { margin-top: 0; }
+.legal-prose h2:first-of-type { margin-top: 0.5rem; }
+.legal-prose a { color: hsl(var(--accent)); }
+.legal-prose ul { max-width: 68ch; }
+.legal-prose p { max-width: 68ch; }
