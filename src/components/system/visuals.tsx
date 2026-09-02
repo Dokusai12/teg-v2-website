@@ -64,14 +64,14 @@ export function AttachRateMeter({ ink = false }: { ink?: boolean }) {
   );
 }
 
-/* ── Refund Shield: checkout card — traveller view + partner revenue ── */
+/* ── Refund Shield: full-width checkout — traveller view + partner revenue ── */
 export function CheckoutShield() {
   return (
-    <div className="relative mx-auto w-full max-w-[340px]">
+    <div className="relative w-full">
       {/* ambient glow behind the card on the ink cell */}
       <div
         aria-hidden
-        className="absolute -inset-6 rounded-[28px] bg-accent/15 blur-2xl transition-opacity duration-4 ease-brand group-hover:opacity-80"
+        className="absolute -inset-5 rounded-[28px] bg-accent/15 blur-2xl transition-opacity duration-4 ease-brand group-hover:opacity-80"
       />
 
       <div className="relative overflow-hidden rounded-2xl border border-ink-border bg-card shadow-elev-3 transition-transform duration-4 ease-brand group-hover:-translate-y-1">
@@ -89,60 +89,82 @@ export function CheckoutShield() {
           <span className="w-8" />
         </div>
 
-        <div className="p-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-            Your trip
-          </p>
+        {/* two panes: trip + add-on | order summary */}
+        <div className="grid sm:grid-cols-[1.25fr_1fr]">
+          {/* left — the traveller's choice */}
+          <div className="p-4 sm:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Your trip
+            </p>
 
-          {/* trip summary */}
-          <div className="mt-2 flex items-center gap-3 rounded-xl border border-border bg-secondary/50 p-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/12">
-              <Plane className="h-[18px] w-[18px] text-accent" strokeWidth={1.75} />
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="text-[13px] font-semibold text-foreground">London → Barcelona</p>
-              <p className="t-caption">15 Jul – 22 Jul · 2 passengers</p>
-            </div>
-            <span className="t-num text-[14px] font-semibold text-foreground">£438</span>
-          </div>
-
-          {/* Refund Shield add-on */}
-          <div className="relative mt-3 rounded-xl border border-signal/30 bg-signal/[0.07] p-3.5 transition-[border-color,background-color] duration-3 ease-brand group-hover:border-signal/45 group-hover:bg-signal/[0.1]">
-            {/* floating revenue chip */}
-            <div className="absolute -top-3.5 right-3 rounded-lg border border-border bg-card px-2.5 py-1.5 text-center shadow-elev-2 transition-transform duration-3 ease-spring group-hover:-translate-y-1">
-              <p className="t-num text-[13px] font-bold leading-none text-signal">+£24</p>
-              <p className="mt-0.5 text-[8.5px] font-medium uppercase tracking-wide text-muted-foreground">
-                New revenue
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-signal/15">
-                <Shield className="h-[18px] w-[18px] text-signal" strokeWidth={1.75} />
+            <div className="mt-2 flex items-center gap-3 rounded-xl border border-border bg-secondary/50 p-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/12">
+                <Plane className="h-[18px] w-[18px] text-accent" strokeWidth={1.75} />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-[13px] font-semibold text-foreground">Refund Shield</p>
-                <p className="t-caption">Full refund if you can't travel</p>
+                <p className="text-[13px] font-semibold text-foreground">London → Barcelona</p>
+                <p className="t-caption">15 Jul – 22 Jul · 2 passengers</p>
               </div>
-              <span className="t-num text-[13px] font-semibold text-signal">+£24</span>
+              <span className="t-num text-[14px] font-semibold text-foreground">£438</span>
             </div>
 
-            <div className="mt-2.5 flex items-center gap-2">
-              <span className="flex h-4 w-4 items-center justify-center rounded border-2 border-signal bg-signal transition-transform duration-2 ease-spring group-hover:scale-110">
-                <Check className="h-2.5 w-2.5 text-background" strokeWidth={4} />
-              </span>
-              <span className="text-[11.5px] font-medium text-foreground">Yes, protect my trip</span>
+            {/* Refund Shield add-on */}
+            <div className="relative mt-3 rounded-xl border border-signal/30 bg-signal/[0.07] p-3.5 transition-[border-color,background-color] duration-3 ease-brand group-hover:border-signal/45 group-hover:bg-signal/[0.1]">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-signal/15">
+                  <Shield className="h-[18px] w-[18px] text-signal" strokeWidth={1.75} />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[13px] font-semibold text-foreground">Refund Shield</p>
+                  <p className="t-caption">Full refund if you can't travel</p>
+                </div>
+                <span className="t-num text-[13px] font-semibold text-signal">+£24</span>
+              </div>
+
+              <div className="mt-2.5 flex items-center gap-2">
+                <span className="flex h-4 w-4 items-center justify-center rounded border-2 border-signal bg-signal transition-transform duration-2 ease-spring group-hover:scale-110">
+                  <Check className="h-2.5 w-2.5 text-background" strokeWidth={4} />
+                </span>
+                <span className="text-[11.5px] font-medium text-foreground">Yes, protect my trip</span>
+              </div>
             </div>
           </div>
 
-          {/* total */}
-          <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
-            <span className="text-[13px] font-semibold text-foreground">Total</span>
-            <span className="t-num text-[16px] font-bold text-foreground">£462</span>
-          </div>
+          {/* right — order summary + partner upside */}
+          <div className="flex flex-col border-t border-border bg-secondary/40 p-4 sm:border-l sm:border-t-0 sm:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Order summary
+            </p>
 
-          <div className="mt-3 rounded-xl bg-foreground py-2.5 text-center text-[12.5px] font-semibold text-background transition-opacity duration-2 group-hover:opacity-90">
-            Complete booking
+            <div className="mt-2.5 space-y-1.5 text-[12px]">
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">Flight + hotel</span>
+                <span className="t-num font-medium text-foreground">£438</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-muted-foreground">Refund Shield</span>
+                <span className="t-num font-medium text-signal">£24</span>
+              </div>
+            </div>
+
+            <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
+              <span className="text-[13px] font-semibold text-foreground">Total</span>
+              <span className="t-num text-[16px] font-bold text-foreground">£462</span>
+            </div>
+
+            <div className="mt-3 rounded-xl bg-foreground py-2.5 text-center text-[12.5px] font-semibold text-background transition-opacity duration-2 group-hover:opacity-90">
+              Complete booking
+            </div>
+
+            {/* partner revenue chip — the original badge, refined */}
+            <div className="mt-auto pt-3">
+              <div className="flex items-center justify-between rounded-xl border border-signal/25 bg-signal/[0.08] px-3 py-2.5 transition-transform duration-3 ease-spring group-hover:-translate-y-0.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  Your new revenue
+                </span>
+                <span className="t-num text-[15px] font-bold text-signal">+£24</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
