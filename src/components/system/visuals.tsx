@@ -1,4 +1,4 @@
-import { Luggage, Plane, Layers, ShieldCheck, Check } from 'lucide-react';
+import { Luggage, Plane, Layers, ShieldCheck, Shield, Check, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /**
