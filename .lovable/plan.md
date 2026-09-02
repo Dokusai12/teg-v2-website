@@ -27,12 +27,17 @@ The product grid is the centrepiece and gets the most attention:
 - Mixed treatments — ink cells, tinted cells, glass cells — so scanning the grid feels designed, not templated.
 - A second, lighter bento on the homepage for capabilities/why-Tego, reusing the same primitives.
 
-## 3. Motion pass
+## 3. Motion pass — every animation polished
+
+A full sweep of every animation on the site, not just the new ones. Nothing keeps its current timing by default; each one is re-tuned until the whole site feels like one smooth piece.
 
 - One scroll-choreography system replacing the current fixed-delay reveals: shared easing, staggered in parallel, nothing feels like it's waiting its turn.
+- Every existing animation audited and re-tuned: hero entrance, nav dropdown and mobile accordion, the trust marquee, bento card hovers, stat counters, the gradient mesh, page transitions between routes. Consistent durations, one easing family, no snappy-then-sluggish mismatches.
 - Scroll-driven moments where they earn it — the integration steps advancing as you scroll, counters counting once, the checkout mockup assembling itself.
-- Micro-interactions on one timing token set: nav dropdown, card lift, button press, tab switch.
+- Micro-interactions on one timing token set: card lift, button press, link underline, tab switch, form focus. Interruptible and reversible, so nothing feels stuck mid-animation.
+- GPU-friendly properties only (transform/opacity), no layout thrash, 60fps target on mid-range mobile.
 - `prefers-reduced-motion` respected and the existing mobile performance guards kept.
+
 
 ## 4. Fuller pages (same pages, more substance)
 
